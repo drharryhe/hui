@@ -1,0 +1,115 @@
+@import 'quasar';
+@import 'theme-dark';
+@import 'theme-light';
+@import 'vars.module';
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  text-align: center;
+}
+
+
+.h-title-bar {
+  height: $title-bar-height !important;
+  max-height: $title-bar-height !important;
+  padding: 0 !important;
+}
+
+.h-tool-bar {
+  height: $tool-bar-height !important;
+  max-height: $tool-bar-height !important;
+}
+
+.h-bar-btn {
+  margin: 0 4px !important;
+}
+
+.h-menu-item {
+  margin: 0 4px !important;
+}
+
+.q-toolbar__title {
+  padding: 0 !important;
+}
+
+.q-menu .q-item--dense, q-item {
+  padding: 0 24px !important;
+  min-height: 28px !important;
+  margin: 4px 0 !important;
+}
+
+.q-list--dense > .q-item, .q-item--dense {
+  min-height: 30px;
+  padding: 2px 24px;
+}
+
+.q-menu .q-item__label--header {
+  padding: 8px 24px !important;
+  min-height: 30px !important;
+  margin: 4px 0 !important;
+}
+
+.q-tabs .q-tab {
+  min-height: $tabs-bar-height !important;
+}
+
+.q-tab__content {
+  padding: 0 !important;
+}
+
+.q-tabs--vertical .q-tab {
+  padding: 0;
+}
+
+.q-tabs--vertical .q-tab__content {
+  min-height: 100px !important;
+  max-width: 30px !important;
+  min-width: 24px !important;
+}
+
+.q-tabs--vertical .q-tab__label {
+  display: block !important;
+  transform: rotate(-90deg) !important;
+}
+
+.q-field--auto-height.q-field .q-field__control, .q-field--auto-height.q-field .q-field__native {
+  min-height: $input-height !important;
+}
+
+.q-field .q-field__control, .q-field .q-field__marginal {
+  height: 28px !important;
+}
+
+.q-checkbox__inner {
+  font-size: $input-height;
+}
+.q-table thead tr, .q-table tbody td {
+  height: $tool-bar-height;
+}
+
+.q-card__section--vert {
+  padding: 0;
+}
+
+.q-list .q-item {
+  min-height: $tool-bar-height;
+  padding: 4px 8px;
+}
+
+.q-list .q-separator--horizontal-inset{
+  margin: 4px 8px !important;
+}

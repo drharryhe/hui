@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
 import Home from '@/views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -10,10 +10,10 @@ const routes: Array<RouteRecordRaw> = [
         path: '/about',
         component: () => import('/src/views/About.vue'),
     },
-    {
-        path: '/code',
-        component: () => import('/src/views/CodeViewer.vue'),
-    },
+    // {
+    //     path: '/code',
+    //     component: () => import('/src/views/CodeViewer.vue'),
+    // },
     {
         path: '/tabs',
         component: () => import('/src/views/TabsPanel.vue'),
@@ -37,6 +37,10 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/toggle',
         component: () => import('/src/views/TogglePanel.vue'),
+    },
+    {
+        path: '/code',
+        component: () => import('/src/views/CodePanel.vue'),
     },
 ]
 

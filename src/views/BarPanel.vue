@@ -39,7 +39,7 @@
     </q-bar>
 
     <q-bar>
-      <q-btn dense flat round icon="lens" size="8.5px" color="red" />
+      <q-btn dense flat round icon="lens" size="xs" color="red" />
       <q-btn dense flat round icon="lens" size="8.5px" color="yellow" />
       <q-btn dense flat round icon="lens" size="8.5px" color="green" />
       <div class="col text-center text-weight-bold">
@@ -48,9 +48,9 @@
     </q-bar>
 
     <q-bar dark class="bg-primary text-white">
-      <q-btn dense flat round icon="lens" size="8.5px" color="red" />
-      <q-btn dense flat round icon="lens" size="8.5px" color="yellow" />
-      <q-btn dense flat round icon="lens" size="8.5px" color="green" />
+      <q-btn  flat round icon="lens" size="5.5px" color="red" />
+      <q-btn  flat round icon="lens" size="5.5px" color="yellow" />
+      <q-btn  flat round icon="lens" size="5.5px" color="green" />
       <div class="col text-center text-weight-bold">
         My-App
       </div>

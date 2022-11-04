@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  //font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,24 +22,16 @@ body {
   text-align: center;
 }
 
+.q-bar {
+  background: rgba(0, 0, 0, 0.2) !important
+}
 
-.h-title-bar {
-  height: $title-bar-height !important;
-  max-height: $title-bar-height !important;
+.q-bar--dark {
+background: rgba(255, 255, 255, 0.15) !important
+}
+
+.q-bar--standard{
   padding: 0 !important;
-}
-
-.h-tool-bar {
-  height: $tool-bar-height !important;
-  max-height: $tool-bar-height !important;
-}
-
-.h-bar-btn {
-  margin: 0 4px !important;
-}
-
-.h-menu-item {
-  margin: 0 4px !important;
 }
 
 .q-toolbar__title {
@@ -47,20 +39,25 @@ body {
 }
 
 .q-menu .q-item--dense, q-item {
-  padding: 0 24px !important;
+  padding: 0 59px !important;
   min-height: 28px !important;
   margin: 4px 0 !important;
 }
 
-.q-list--dense > .q-item, .q-item--dense {
-  min-height: 30px;
-  padding: 2px 24px;
+.q-menu .q-item__label--header {
+  text-align: center;
+  padding: 8px 0 !important;
+  min-height: $tool-bar-height !important;
+  margin: 4px 0 !important;
 }
 
-.q-menu .q-item__label--header {
-  padding: 8px 24px !important;
-  min-height: 30px !important;
-  margin: 4px 0 !important;
+.q-list .q-item {
+  min-height: $tool-bar-height;
+  padding: 4px 8px;
+}
+
+.q-list .q-separator--horizontal-inset{
+  margin: 4px 8px !important;
 }
 
 .q-tabs .q-tab {
@@ -105,11 +102,7 @@ body {
   padding: 0;
 }
 
-.q-list .q-item {
-  min-height: $tool-bar-height;
-  padding: 4px 8px;
-}
 
-.q-list .q-separator--horizontal-inset{
-  margin: 4px 8px !important;
+.q-toggle__inner {
+  font-size: 28px !important;
 }

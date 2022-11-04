@@ -2,8 +2,10 @@ $title-bar-height: 32px;
 $tool-bar-height: 30px;
 $tabs-bar-height: 30px;
 $input-height: 24px;
+$vertical-bar-width: 40px;
 
 :export {
   titleBarHeight: $title-bar-height;
   toolBarHeight: $tool-bar-height;
+  verticalBarWidth: $vertical-bar-width;
 }

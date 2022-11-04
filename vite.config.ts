@@ -10,19 +10,16 @@ const prefix = `monaco-editor/esm/vs`;
 export default defineConfig({
   plugins: [
     quasar({
-      sassVariables: "src/theme/quasar-variables.sass"
+      sassVariables: "src/assets/styles/quasar-variables.sass"
     }),
     vue(),
     monacoEditorPlugin({})
   ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        // additionalData: `src/assets/styles/index.scss";`,
-      }
-    }
-  },
   build: {
+    outDir: 'dist',
+    minify: 'esbuild',
+    sourcemap: false,
+    chunkSizeWarningLimit: 1500,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -31,7 +28,10 @@ export default defineConfig({
           htmlWorker: [`${prefix}/language/html/html.worker`],
           tsWorker: [`${prefix}/language/typescript/ts.worker`],
           editorWorker: [`${prefix}/editor/editor.worker`]
-        }
+        },
+        entryFileNames: `assets/[name].${new Date().getTime()}.js`,
+        chunkFileNames: `assets/[name].${new Date().getTime()}.js`,
+        assetFileNames: `assets/[name].${new Date().getTime()}.[ext]`,
       }
     }
   },
@@ -39,7 +39,7 @@ export default defineConfig({
     alias: [
       {
         find: "@",
-        replacement: path.resolve(path.resolve(__dirname), "src")
+        replacement: path.resolve(__dirname, "src")
       }
     ],
     extensions: ['.ts', '.js', '.vue', '.json'],

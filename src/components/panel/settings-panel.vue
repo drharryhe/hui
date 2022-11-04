@@ -1,58 +1,62 @@
 <template>
-  <q-list class="justify-start list" bordered dense :style="'width:'+width">
-    <q-item-label header class="text-weight-bold">{{ $t('settings.general') }}</q-item-label>
-    <q-separator/>
-    <q-item>
-      <q-item-section>
-        <q-item-label>
-          {{ $t('settings.language') }}
-        </q-item-label>
-      </q-item-section>
-      <q-item-section side>
-        <q-select
-            filled
-            v-model="selectedLang"
-            :options="languages"
-            color="secondary"
-            options-selected-class="text-secondary"
-            class="options "
-            dense
-            options-dense
-            @update:model-value=onLangChanged(val)>
-          <template v-slot:selected>
-            <div class="row items-center q-gutter-md">
-              <q-icon :name="selectedLang.icon"/>
-              <q-item-label>{{ selectedLang.label }}</q-item-label>
-            </div>
-          </template>
+  <q-card>
+    <q-card-section>
+      <q-list class="justify-start list" bordered dense :style="'width:'+width">
+        <q-item-label header class="text-weight-bold">{{ $t('settings.general') }}</q-item-label>
+        <q-separator/>
+        <q-item>
+          <q-item-section>
+            <q-item-label>
+              {{ $t('settings.language') }}
+            </q-item-label>
+          </q-item-section>
+          <q-item-section side>
+            <q-select
+                filled
+                v-model="selectedLang"
+                :options="languages"
+                color="secondary"
+                options-selected-class="text-secondary"
+                class="options "
+                dense
+                options-dense
+                @update:model-value=onLangChanged(val)>
+              <template v-slot:selected>
+                <div class="row items-center q-gutter-md">
+                  <q-icon :name="selectedLang.icon"/>
+                  <q-item-label>{{ selectedLang.label }}</q-item-label>
+                </div>
+              </template>
 
-          <template v-slot:option="scope">
-            <q-item v-bind="scope.itemProps">
-              <q-item-section avatar>
-                <q-icon :name="scope.opt.icon"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ scope.opt.label }}</q-item-label>
-              </q-item-section>
-            </q-item>
-          </template>
-        </q-select>
-      </q-item-section>
-    </q-item>
-    <q-item>
-      <q-item-section>
-        <q-item-label>
-          {{ $t('settings.theme') }}
-        </q-item-label>
-      </q-item-section>
-      <q-item-section side top>
-        <q-checkbox left-label
-                    v-model="dark"
-                    :label="strings().darkTheme"
-                    @update:model-value="onThemeChanged()"/>
-      </q-item-section>
-    </q-item>
-  </q-list>
+              <template v-slot:option="scope">
+                <q-item v-bind="scope.itemProps">
+                  <q-item-section avatar>
+                    <q-icon :name="scope.opt.icon"/>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label>{{ scope.opt.label }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </template>
+            </q-select>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-item-label>
+              {{ $t('settings.theme') }}
+            </q-item-label>
+          </q-item-section>
+          <q-item-section side top>
+            <q-checkbox left-label
+                        v-model="dark"
+                        :label="strings().darkTheme"
+                        @update:model-value="onThemeChanged()"/>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-card-section>
+  </q-card>
 </template>
 
 <script>

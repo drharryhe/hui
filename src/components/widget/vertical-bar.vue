@@ -1,42 +1,34 @@
 <template>
-  <transition
-      appear
-      enter-active-class="animated fadeIn"
-      leave-active-class="animated fadeOut">
-    <div class="row">
-      <div class="column" :style="'height:'+height">
-        <q-list class="list col">
-          <q-item v-for="(item,index) in top" clickable v-ripple
-                  @click="item.onClick(index)">
-            <q-item-section avatar>
-              <q-icon :name="item.icon" :color="!!item.active?'primary':''"/>
-            </q-item-section>
-            <q-tooltip v-if="!!item.tip&&side==='left'" :delay="1000" anchor="center right" self="center left">
-              {{ $t(item.tip) }}
-            </q-tooltip>
-            <q-tooltip v-if="!!item.tip&&side==='right'" :delay="1000" anchor="center left" self="center right">
-              {{ $t(item.tip) }}
-            </q-tooltip>
-          </q-item>
-        </q-list>
-        <q-list class="list column justify-end">
-          <q-item v-for="(item,index) in bottom" clickable v-ripple
-                  @click="item.onClick(index)">
-            <q-item-section avatar>
-              <q-icon :name="item.icon"/>
-            </q-item-section>
-            <q-tooltip v-if="!!item.tip&&side==='left'" :delay="1000" anchor="center right" self="center left">
-              {{ $t(item.tip) }}
-            </q-tooltip>
-            <q-tooltip v-if="!!item.tip&&side==='right'" :delay="1000" anchor="center left" self="center right">
-              {{ $t(item.tip) }}
-            </q-tooltip>
-          </q-item>
-        </q-list>
-      </div>
-      <q-separator vertical/>
-    </div>
-  </transition>
+  <div class="column" :style="'height:'+height">
+    <q-list class="list col">
+      <q-item v-for="(item,index) in top" clickable v-ripple
+              @click="item.onClick(index)">
+        <q-item-section avatar>
+          <q-icon :name="item.icon" :color="!!item.active?'primary':''"/>
+        </q-item-section>
+        <q-tooltip v-if="!!item.tip&&side==='left'" :delay="1000" anchor="center right" self="center left">
+          {{ $t(item.tip) }}
+        </q-tooltip>
+        <q-tooltip v-if="!!item.tip&&side==='right'" :delay="1000" anchor="center left" self="center right">
+          {{ $t(item.tip) }}
+        </q-tooltip>
+      </q-item>
+    </q-list>
+    <q-list class="list column justify-end">
+      <q-item v-for="(item,index) in bottom" clickable v-ripple
+              @click="item.onClick(index)">
+        <q-item-section avatar>
+          <q-icon :name="item.icon"/>
+        </q-item-section>
+        <q-tooltip v-if="!!item.tip&&side==='left'" :delay="1000" anchor="center right" self="center left">
+          {{ $t(item.tip) }}
+        </q-tooltip>
+        <q-tooltip v-if="!!item.tip&&side==='right'" :delay="1000" anchor="center left" self="center right">
+          {{ $t(item.tip) }}
+        </q-tooltip>
+      </q-item>
+    </q-list>
+  </div>
 </template>
 
 <script>

@@ -24,6 +24,7 @@ import SettingPanel from '@/components/panel/settings-panel.vue';
 import {useQuasar} from 'quasar'
 import {useStoreSetting} from "@/store/setting";
 import VerticalBar from "@/components/widget/vertical-bar.vue";
+//@ts-ignore
 import scssVars from "./assets/styles/vars.module.scss";
 import router from '@/router';
 
@@ -67,6 +68,13 @@ export default {
             icon: 'person',
             onClick: (item: Object) => {
               router.replace('/bar')
+            }
+          },
+          {
+            tip:'Code Panel',
+            icon: 'person',
+            onClick: (item: Object) => {
+              router.replace('/code')
             }
           },
           {
